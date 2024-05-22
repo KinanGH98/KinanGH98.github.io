@@ -56,7 +56,8 @@
             background-color: var(--inputTintColor);
         } */
 
-        input[type="text"]:focus {
+        input[type="text"]:focus,
+        input[type="password"]:focus {
             border: 2px solid white;
         }
 
@@ -121,7 +122,7 @@
             <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="Enter your email...">
             <label for="password">Password</label>
-            <input type="text" name="password" id="password" placeholder="Enter your password...">
+            <input type="password" name="password" id="password" placeholder="Enter your password...">
             <div class="buttons">
                 <input type="submit" value="LOGIN" onclick="printData()">
                 <input type="button" class="signupBtn" value="SIGNUP">
