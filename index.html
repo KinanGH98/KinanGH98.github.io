@@ -2,92 +2,139 @@
 <html>
 
 <head>
-    <title>My First Website</title>
+    <title>Login Screen</title>
     <style>
-        body {
-            background-color: rgb(36, 36, 36);
+        :root {
+            --ctaColor: rgba(32, 192, 93, 0.938);
+            --inputTintColor: rgba(11, 230, 66, 0.116);
+            --inputActiveColor: rgba(9, 114, 35, 0.116);
         }
 
         html {
+            min-height: 100%;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
+            display: flex;
+            align-items: center;
+            min-height: 100%;
+            display: grid;
+
+        }
+
+        h2 {
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        form {
+            background: linear-gradient(to right, #15995794, #15579998);
+            border-radius: 15px;
+            padding: 18px 20px;
+            margin: auto;
+            width: 80%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            color: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            margin-bottom: 20px;
+            height: 35px;
+            border-radius: 8px;
+            border: 0px;
+            background-color: rgba(240, 248, 255, 0.432);
+            text-indent: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.356);
+            outline: none;
+        }
+
+        /* input:hover {
+            background-color: var(--inputTintColor);
+        } */
+
+        input[type="text"]:focus {
+            border: 2px solid white;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: var(--inputTintColor);
+        }
+
+        input[type="submit"]:active,
+        input[type="button"]:active {
+            background-color: var(--inputActiveColor);
+        }
+
+        ::placeholder {
+            color: inherit;
+            opacity: .7;
+            margin-left: 70px;
+        }
+
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            background-color: var(--ctaColor);
+            cursor: pointer;
+            width: 100%;
+            text-indent: revert;
+        }
+
+        .signupBtn {
+            border: 2px solid var(--ctaColor);
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            width: 100%;
+            text-indent: revert;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+            flex-direction: row;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-left: 5px;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 
-<body>
-    <div style="width: 1600px; height: 900px; position: relative; background: #F9F9F9">
-        <div
-            style="width: 218px; height: 122px; left: 0px; top: 274.27px; position: absolute; transform: rotate(-38.69deg); transform-origin: 0 0; opacity: 0.50; background: #ED3A3A; border-radius: 9999px">
-        </div>
-        <div
-            style="width: 477.39px; height: 716.78px; left: 745px; top: 618.77px; position: absolute; transform: rotate(-63.37deg); transform-origin: 0 0; opacity: 0.50; background: #ED3A3A; border-radius: 9999px">
-        </div>
-        <div
-            style="width: 1600px; height: 900px; left: 0px; top: 0px; position: absolute; background: rgba(255, 255, 255, 0.10); backdrop-filter: blur(125.40px)">
-            <img style="width: 655px; height: 596px; left: 847px; top: 106px; position: absolute; mix-blend-mode: multiply"
-                src="https://via.placeholder.com/655x596" />
-        </div>
-        <div
-            style="width: 1017px; padding: 20px; left: 92px; top: 579px; position: absolute; border-radius: 5px; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 97px; display: inline-flex">
-            <div style="width: 261px; height: 248px; position: relative">
-                <div
-                    style="width: 91px; height: 90px; left: 5px; top: 23px; position: absolute; color: #ED3A3A; font-size: 64px; font-family: Font Awesome 6 Free; font-weight: 900; word-wrap: break-word">
-                    </div>
-                <div
-                    style="width: 256px; height: 74px; left: 5px; top: 174px; position: absolute; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; line-height: 31.37px; word-wrap: break-word">
-                    Service 1 is very awesome and wholesome to you.</div>
-                <div
-                    style="width: 147px; height: 39px; left: 5px; top: 114px; position: absolute; color: black; font-size: 32px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                    Service 1</div>
+<body back background="https://images6.alphacoders.com/132/1325115.png">
+    <form>
+        <h2>Welcome</h1>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email...">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password" placeholder="Enter your password...">
+            <div class="buttons">
+                <input type="submit" value="LOGIN" onclick="printData()">
+                <input type="button" class="signupBtn" value="SIGNUP">
             </div>
-            <div style="width: 261px; height: 248px; position: relative">
-                <div
-                    style="width: 91px; height: 90px; left: 5px; top: 23px; position: absolute; color: #ED3A3A; font-size: 64px; font-family: Font Awesome 6 Free; font-weight: 900; word-wrap: break-word">
-                    </div>
-                <div
-                    style="width: 256px; height: 74px; left: 5px; top: 174px; position: absolute; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; line-height: 31.37px; word-wrap: break-word">
-                    Service 2 is very awesome and wholesome to you.</div>
-                <div
-                    style="width: 147px; height: 39px; left: 5px; top: 114px; position: absolute; color: black; font-size: 32px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                    Service 2</div>
-            </div>
-            <div style="width: 261px; height: 248px; position: relative">
-                <div
-                    style="width: 91px; height: 90px; left: 5px; top: 23px; position: absolute; color: #ED3A3A; font-size: 64px; font-family: Font Awesome 6 Free; font-weight: 900; word-wrap: break-word">
-                    </div>
-                <div
-                    style="width: 256px; height: 74px; left: 5px; top: 174px; position: absolute; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; line-height: 31.37px; word-wrap: break-word">
-                    Service 3 is very awesome and wholesome to you.</div>
-                <div
-                    style="width: 147px; height: 39px; left: 5px; top: 114px; position: absolute; color: black; font-size: 32px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                    Service 3</div>
-            </div>
-        </div>
-        <div style="width: 711px; height: 295px; left: 89px; top: 74px; position: absolute"><span
-                style="color: #ED3A3A; font-size: 80px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">LUXE
-            </span><span
-                style="color: black; font-size: 80px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">IS
-                HERE
-                TO BE YOUR ASSISTANCE</span></div>
-        <div
-            style="width: 208px; height: 59px; left: 112px; top: 507px; position: absolute; color: black; font-size: 36px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-            OUR SERVICE</div>
-        <div
-            style="width: 1600px; padding-top: 10px; padding-bottom: 10px; padding-left: 90px; padding-right: 10px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
-            <div
-                style="width: 80px; height: 64px; color: #ED3A3A; font-size: 32px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                LUXE</div>
-            <div
-                style="width: 57px; height: 54px; text-align: center; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                Home</div>
-            <div
-                style="width: 81px; height: 54px; text-align: center; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                Products</div>
-            <div
-                style="width: 61px; height: 54px; text-align: center; color: black; font-size: 24px; font-family: Jaldi; font-weight: 400; word-wrap: break-word">
-                Menus</div>
-        </div>
-    </div>
+    </form>
+    <script>
+        function printData()
+        {
+            let email = document.getElementById('email').value;
+            let pass = document.getElementById('password').value;
+            alert('Hi ' + email + ', Your pass is : ' + pass);
+        }
+    </script>
 </body>
 
 </html>
