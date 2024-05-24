@@ -53,16 +53,15 @@
             outline: none;
         }
 
-        /* input:hover {
-            background-color: var(--inputTintColor);
-        } */
-
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border: 2px solid white;
+            box-shadow: 0 0 0 2px white;
+            /* border: 2px solid white; */
         }
 
         input[type="submit"]:hover,
+        input[type="submit"]:focus,
+        input[type="button"]:focus,
         input[type="button"]:hover {
             background-color: var(--inputTintColor);
         }
@@ -125,11 +124,12 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter your password...">
             <div class="buttons">
-                <input type="submit" value="LOGIN" onclick="printData()">
+                <input type="submit" value="LOGIN" onclick="printData()" name="Password">
                 <input type="button" class="signupBtn" value="SIGNUP">
             </div>
     </form>
     <script>
+
         function printData()
         {
             let email = document.getElementById('email').value;

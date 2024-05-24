@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First Website</title>
+    <style>
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(36, 36, 36);
+        }
+
+        form {
+            width: 60%;
+            padding: 20px;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(145deg, rgba(2, 0, 36, 1) 0%, rgb(100, 42, 96) 35%, rgb(68, 4, 78) 100%);
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        fieldset {
+            padding: 10px;
+            margin: 0;
+            border-radius: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: large;
+            margin: 10px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid grey;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        input[type=radio] {
+            transform: scale(1.2);
+            margin: 7px 10px;
+        }
+
+        input[type=submit] {
+            font-weight: bold;
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Login Page</legend>
+            <label for="username">Full name:</label>
+            <input type="text" name="username" id="username">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+
+            <label for="passwordConfirm">Confirm your password:</label>
+            <input type="password" name="passwordConfirm" id="passwordConfirm">
+
+            <label>Enter your gender:</label>
+            <label><input type="radio" name="gender" value="male">Male</label>
+            <label><input type="radio" name="gender" value="female">Female</label>
+
+            <label for="birthdate">Enter your birthdate:</label>
+            <input type="date" name="birthdate" id="birthdate">
+
+            <label for="birthdate">Enter your address:</label>
+            <textarea name="address" id="address"></textarea>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+
+</html>
