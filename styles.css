@@ -1,4 +1,19 @@
-h1{
-    background: #c24e4e;
-    color: aquamarine;
+.nav-back {
+    color: white;
+    border-radius: 100px;
+    width: 35px;
+    height: 35px;
+    margin: 10px 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-back:hover {
+    background-color: #615C5C;
+}
+
+.nav-back:focus {
+    background-color: #3d3a3a;
 }

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>My First Website</title>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
+    <title>Amethyst Login</title>
+    <link href="styles.css" rel="stylesheet">
     <style>
         html {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
         }
 
-        body {
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+        }
+
+        body {
+            /*background-color: rgb(36, 36, 36);*/
+            height: 98vh;
             margin: 0;
-            background-color: rgb(36, 36, 36);
+            background: linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%);
         }
 
         form {
@@ -25,6 +31,7 @@
             background: linear-gradient(145deg, rgba(2, 0, 36, 1) 0%, rgb(100, 42, 96) 35%, rgb(68, 4, 78) 100%);
             border-radius: 25px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
         }
 
         fieldset {
@@ -75,34 +82,37 @@
 </head>
 
 <body>
+<a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="container">
     <form>
         <fieldset>
             <legend>Login Page</legend>
             <label for="username">Full name:</label>
-            <input type="text" name="username" id="username">
+            <input id="username" name="username" type="text">
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input id="email" name="email" type="email">
 
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
+            <input id="password" name="password" type="password">
 
             <label for="passwordConfirm">Confirm your password:</label>
-            <input type="password" name="passwordConfirm" id="passwordConfirm">
+            <input id="passwordConfirm" name="passwordConfirm" type="password">
 
             <label>Enter your gender:</label>
-            <label><input type="radio" name="gender" value="male">Male</label>
-            <label><input type="radio" name="gender" value="female">Female</label>
+            <label><input name="gender" type="radio" value="male">Male</label>
+            <label><input name="gender" type="radio" value="female">Female</label>
 
             <label for="birthdate">Enter your birthdate:</label>
-            <input type="date" name="birthdate" id="birthdate">
+            <input id="birthdate" name="birthdate" type="date">
 
-            <label for="birthdate">Enter your address:</label>
-            <textarea name="address" id="address"></textarea>
+            <label for="address">Enter your address:</label>
+            <textarea id="address" name="address"></textarea>
 
             <input type="submit" value="Submit">
         </fieldset>
     </form>
+</div>
 </body>
 
 </html>

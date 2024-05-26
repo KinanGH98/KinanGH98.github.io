@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Tranquil Login</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        :root {
+            --ctaColor: rgba(32, 192, 93, 0.938);
+            --inputTintColor: rgba(11, 230, 66, 0.116);
+            --inputActiveColor: rgba(9, 114, 35, 0.116);
+        }
+
+        html {
+            min-height: 100%;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        form {
+            background: linear-gradient(to right, #15995794, #15579998);
+            border-radius: 15px;
+            padding: 18px 20px;
+            margin: auto;
+            width: 80%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            color: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            margin-bottom: 20px;
+            height: 35px;
+            border-radius: 8px;
+            border: 0;
+            background-color: rgba(240, 248, 255, 0.432);
+            text-indent: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.356);
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 0 0 2px white;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus,
+        input[type="button"]:focus,
+        input[type="button"]:hover {
+            background-color: var(--inputTintColor);
+        }
+
+        input[type="submit"]:active,
+        input[type="button"]:active {
+            background-color: var(--inputActiveColor);
+        }
+
+        ::placeholder {
+            color: inherit;
+            opacity: .7;
+            margin-left: 70px;
+        }
+
+        body {
+            background-size: cover;
+            background: url("images/green-login-background.jpg") no-repeat center;
+            background-size: cover;
+            margin: 0;
+            height: 98vh;
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            background-color: var(--ctaColor);
+            cursor: pointer;
+            width: 100%;
+            text-indent: revert;
+        }
+
+        .signupBtn {
+            border: 2px solid var(--ctaColor);
+            background-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
+            width: 100%;
+            text-indent: revert;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+
+        .buttons {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+            flex-direction: row;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+        }
+
+    </style>
+</head>
+
+<body>
+<a class="nav-back" href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="container">
+    <form>
+        <h2>Welcome</h2>
+        <label for="email">Email</label>
+        <input id="email" name="email" placeholder="Enter your email..." type="text">
+        <label for="password">Password</label>
+        <input id="password" name="password" placeholder="Enter your password..." type="password">
+        <div class="buttons">
+            <input name="Password" onclick="printData()" type="submit" value="LOGIN">
+            <input class="signupBtn" type="button" value="SIGNUP">
+        </div>
+    </form>
+</div>
+<script>
+    function printData() {
+        let email = document.getElementById('email').value;
+        let pass = document.getElementById('password').value;
+        alert('Hi ' + email + ', Your pass is : ' + pass);
+    }
+</script>
+</body>
+
+</html>
