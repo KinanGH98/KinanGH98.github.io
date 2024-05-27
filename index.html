@@ -5,16 +5,21 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Dashboard</title>
+    <title>Dashboard | Welcome to Kinan's website.</title>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
     <link href="index-styles.css" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header">
-        <a href="index.html" id="header-website-logo"><img
-                alt="Website logo."
-                src="website-logo.png"
-                width="45px"></a>
+        <div class="mobile-header">
+            <a href="index.html" style="line-height: 0;"><img
+                    alt="Website logo."
+                    src="website-logo.png"
+                    width="45px"></a>
+            <button class="hamburger" onclick="toggleHamburgerMenu()"><i class="fa-solid fa-bars fa-flip-both"></i>
+            </button>
+        </div>
         <div class="header-links">
             <a class="header-link" href="">Coming soon...</a>
             <a class="header-link" href="">Coming soon...</a>
@@ -24,7 +29,7 @@
 </header>
 <div style="display: flex; justify-content: center">
     <div class="bio-container">
-        <div class="bio-text"><h3>Hi! I'm Kinan</h3>
+        <div class="bio-text"><h3 style="margin: 0;">Hi! I'm Kinan</h3>
             <br>A web development enthusiast. This website is my playground for learning and
             experimenting with code. Here you'll find projects I'm working on, from the basics to new things I'm
             exploring.
@@ -60,15 +65,58 @@
 <footer>
     <div class="footer">
         <div class="footer-links">
-            <a class="header-link" href="mailto:kinangh98@gmail.com">kinangh98@gmail.com</a>
-            <a class="header-link" href="https://facebook.com/ahmedkinan.ghbash">Facebook</a>
-            <a class="header-link" href="https://github.com/KinanGH98/">GitHub</a>
+            <a class="footer-link" href="mailto:kinangh98@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a class="footer-link" href="https://facebook.com/ahmedkinan.ghbash"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a class="footer-link" href="https://github.com/KinanGH98/"><i class="fa-brands fa-github"></i></a>
         </div>
-        <a href="index.html" id="footer-website-logo"><img
-                alt="Website logo."
-                src="website-logo.png"
-                width="100px"></a>
+        <div class="footer-text">
+            <a href="index.html" id="footer-website-logo"><img
+                    alt="Website logo."
+                    src="website-logo.png"
+                    width="80px"></a>
+            <br><br>
+            Made by Kinan, a web development student.
+            <br>
+            <br>
+            Made with HTML, CSS, and a sprinkle of JavaScript.
+            <br>
+            <br>
+            This website is a constant experiment. Check back often to see the updates!
+        </div>
     </div>
 </footer>
+
+<script>
+    const hamburgerMenu = document.querySelector(".header-links");
+    window.onresize = menuResized;
+    let menuOpened;
+    
+    function toggleHamburgerMenu()
+    {
+        if (menuOpened)
+        {
+            hamburgerMenu.style.display = "none";
+            menuOpened = false;
+        } else if (!menuOpened)
+        {
+            hamburgerMenu.style.display = "flex";
+            menuOpened = true;
+        }
+    }
+
+    function menuResized()
+    {
+        // Enable the links div on desktop. 
+        if (window.innerWidth > 800 && !menuOpened)
+        {
+            toggleHamburgerMenu();
+            return;
+        }
+
+        // Disable the links div on mobile. 
+        if (window.innerWidth < 800 && menuOpened) toggleHamburgerMenu();
+    }
+</script>
 </body>
 </html>
