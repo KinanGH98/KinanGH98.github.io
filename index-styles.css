@@ -104,17 +104,17 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 35px;
+    padding: 25px;
     background-color: var(--glass-color);
-    margin: var(--whole-page-margin);
+    margin: var(--whole-page-margin) 15px;
     border-radius: 50px;
     max-width: 1000px;
 }
 
 .bio-text {
     max-width: 50%;
-    font-size: 20px;
     margin-top: 0;
+    font-size: 18px;
 }
 
 @media all and (max-width: 1024px) {
