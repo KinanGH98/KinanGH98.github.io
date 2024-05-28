@@ -3,12 +3,13 @@
     --image-border-radius: var(--i-radius) var(--i-radius) var(--i-radius) 60px;
     --glass-color: rgba(95, 62, 97, 0.5);
     --main-color: rgba(0, 0, 0, 0.75);
+    --font-color: #eaeaea;
     --whole-page-margin: 50px;
 }
 
 html {
     font-family: "League Spartan", sans-serif;
-    color: #eaeaea;
+    color: var(--font-color);
     font-size: 18px;
     line-height: 25px;
 }
@@ -52,7 +53,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: #eaeaea;
+    background-color: var(--font-color);
 }
 
 @media all and (max-width: 800px) {
@@ -192,26 +193,22 @@ body {
     margin-top: 23px;
     text-align: center;
     overflow: hidden;
-    z-index: 1;
 }
 
 .card-cta::before {
     position: absolute;
     content: "";
-    background-color: var(--glass-color);
-    top: 0;
-    bottom: 100%;
-    right: 100%;
+    background-color: var(--font-color);
+    bottom: 0;
+    right: 0;
     left: 0;
-    z-index: -1;
-    background-clip: content-box;
-    border-radius: inherit;
-    transition: right, bottom, 200ms ease-in-out;
+    height: 3px;
+    transition: transform 200ms ease-in-out;
+    transform: scaleX(0);
 }
 
 .card:hover > .card-lower-part > .card-cta::before {
-    right: 0;
-    bottom: 0;
+    transform: scaleX(1);
 }
 
 .card-lower-part {
