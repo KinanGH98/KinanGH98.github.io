@@ -7,8 +7,10 @@
 }
 
 html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "League Spartan", sans-serif;
     color: #eaeaea;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 body {
@@ -73,14 +75,12 @@ body {
     }
 
     .header-links {
+
         margin-top: 15px;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         gap: 25px;
-    }
-
-    .header-links {
         display: none;
     }
 
@@ -114,7 +114,8 @@ body {
 .bio-text {
     max-width: 50%;
     margin-top: 0;
-    font-size: 18px;
+    font-size: 20px;
+    text-align: justify;
 }
 
 @media all and (max-width: 1024px) {
@@ -190,6 +191,27 @@ body {
     text-indent: 15px;
     margin-top: 23px;
     text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card-cta::before {
+    position: absolute;
+    content: "";
+    background-color: var(--glass-color);
+    top: 0;
+    bottom: 100%;
+    right: 100%;
+    left: 0;
+    z-index: -1;
+    background-clip: content-box;
+    border-radius: inherit;
+    transition: right, bottom, 200ms ease-in-out;
+}
+
+.card:hover > .card-lower-part > .card-cta::before {
+    right: 0;
+    bottom: 0;
 }
 
 .card-lower-part {
@@ -226,12 +248,13 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 60px;
 }
 
 .footer-text {
-    padding-left: 15px;
+    padding-left: 30px;
     border-left: 2px solid #dadada;
+    max-width: 450px;
 }
 
 .footer-link {
@@ -246,7 +269,7 @@ body {
         border-left: 0;
         border-top: 2px solid #dadada;
         padding-left: 0;
-        padding-top: 42px;
+        padding-top: 32px;
         padding-bottom: 15px;
     }
 }
