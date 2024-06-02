@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
+    <title>Amethyst Signup</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="purple-signup-stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+
+<a class="nav-back" href="index.html#projects-header"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="container">
+    <form>
+        <fieldset>
+            <legend>Signup Page</legend>
+            <label for="username">Full Name:</label>
+            <input id="username" name="username" placeholder="Enter your full name..." required type="text">
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" placeholder="Enter your email..." required type="email">
+
+            <label for="password">Password:</label>
+            <input id="password" name="password" placeholder="Enter your password..." required type="password">
+
+            <label for="passwordConfirm">Confirm your password:</label>
+            <input id="passwordConfirm" name="passwordConfirm" placeholder="Enter your password again..."
+                   required type="password">
+
+            <label>Enter your gender:</label>
+            <label><input name="gender" required type="radio" value="male">Male</label>
+            <label><input name="gender" required type="radio" value="female">Female</label>
+
+            <label for="birthdate">Enter your birthdate:</label>
+            <input id="birthdate" name="birthdate" required type="date">
+
+            <label for="address">Enter your address: (optional)</label>
+            <textarea id="address" name="address"
+                      placeholder="e.g Paul and Mary Moore, 1313 E Main St."></textarea>
+
+            <input class="submit-btn" type="submit" value="Submit">
+        </fieldset>
+    </form>
+</div>
+</body>
+<script src="purple-signup-script.js"></script>
+</html>
