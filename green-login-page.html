@@ -5,7 +5,7 @@
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Tranquil Login</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="global-stylesheet.css" rel="stylesheet">
     <style>
         :root {
             --ctaColor: rgba(32, 192, 93, 0.938);
@@ -137,7 +137,8 @@
     </form>
 </div>
 <script>
-    function printData() {
+    function printData()
+    {
         let email = document.getElementById('email').value;
         let pass = document.getElementById('password').value;
         alert('Hi ' + email + ', Your pass is : ' + pass);
