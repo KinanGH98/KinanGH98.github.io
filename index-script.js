@@ -14,27 +14,16 @@ function toggleHamburgerMenu(e)
         menuOpened = false;
         document.getElementById("hamburgerBtn").querySelector("i").className = "fa-solid fa-bars fa-flip";
         hamburgerMenu.classList.remove('header-links-fade');
-        document.removeEventListener("click", hideHamburgerMenuOnOutsideClick);
     }
     else if (!menuOpened)
     {
         hamburgerMenu.style.display = "flex";
         menuOpened = true;
         document.getElementById("hamburgerBtn").querySelector("i").className = "fa-solid fa-xmark fa-spin fa-spin-reverse";
-        document.addEventListener("click", hideHamburgerMenuOnOutsideClick);
     }
 
     // Prevent the document.onclick event from triggering by disabling event bubbling. 
     if (e !== undefined) e.stopPropagation();
-}
-
-/**
- * Hide the hamburger menu when the user clicks outside of it.
- */
-function hideHamburgerMenuOnOutsideClick(mouseClick)
-{
-    if (!document.querySelector(".header-links").contains(mouseClick.target))
-        toggleHamburgerMenu();
 }
 
 /**
@@ -46,9 +35,6 @@ function screenResized()
     if (window.innerWidth > 800 && !menuOpened) toggleHamburgerMenu();
     // Disable the links div on mobile. 
     else if (window.innerWidth < 800 && menuOpened) toggleHamburgerMenu();
-
-    // Disable hiding the hamburger menu when the screen resizes.
-    document.removeEventListener("click", hideHamburgerMenuOnOutsideClick);
 }
 
 function toggleTheme()
@@ -67,3 +53,45 @@ function setTheme(theme)
 
     localStorage.setItem("theme", theme);
 }
+
+function closeSideBarOnMobile()
+{
+    if (window.innerWidth < 800) toggleHamburgerMenu();
+}
+
+// Card template declaration.
+class CardComponent extends HTMLElement
+{
+    connectedCallback()
+    {
+        const template = document.getElementById('card-template');
+        const content = template.content.cloneNode(true);
+
+        const cardElement = content.querySelector('.card');
+        cardElement.setAttribute('onclick', `location.href='${this.getAttribute('url')}';`);
+        cardElement.setAttribute('title', '');
+        content.querySelector('.card-image').setAttribute('alt', this.getAttribute('img-alt'));
+        content.querySelector('.card-image').setAttribute('src', this.getAttribute('img-src'));
+        content.querySelector('.card-title').innerText = this.getAttribute('title');
+        content.querySelector('.card-desc').innerText = this.getAttribute('desc');
+        content.querySelector('.card-src-link').setAttribute('href', this.getAttribute('src-url'));
+        content.querySelector('.card-cta').setAttribute('href', this.getAttribute('url'));
+
+        const tagsElement = content.querySelector('.card-tags');
+        const tags = this.getAttribute('tags');
+        if (tags)
+        {
+            const tagsArray = tags.split(',');
+            tagsArray.forEach(tag =>
+            {
+                const tagElement = document.createElement('span');
+                tagElement.textContent = tag.trim();
+                tagsElement.appendChild(tagElement);
+            });
+        }
+
+        this.appendChild(content);
+    }
+}
+
+customElements.define('card-component', CardComponent);

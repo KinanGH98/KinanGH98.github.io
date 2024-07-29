@@ -1,210 +1,240 @@
 <!doctype html>
-<!--suppress CheckImageSize -->
 <html data-theme="light" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Dashboard | Welcome to Kinan's website.</title>
+    <meta content="en" http-equiv="Content-Language">
+    <meta content="index, follow" name="robots">
+
+    <meta content="I'm Ahmed Kinan Ghbash, a passionate web developer showcasing my skills and projects. Explore my portfolio to discover my expertise in HTML, CSS, JavaScript, React and more. Learn about my journey and passion for creating innovative web experiences."
+          name="description"/>
+    <meta content="web developer, portfolio, web design, web development, Ahmed Kinan Ghbash, HTML, CSS, JavaScript, React, front-end development, programming, web projects, developer portfolio, web developer portfolio"
+          name="keywords"/>
+    <meta content="Ahmed Kinan Ghbash" name="author">
+
+    <!-- Open Graph / Facebook -->
+    <meta content="Ahmed Kinan Ghbash | A web development enthusiast." property="og:title">
+    <meta content="I'm Ahmed Kinan Ghbash, a passionate web developer showcasing my skills and projects. Explore my portfolio to discover my expertise in HTML, CSS, JavaScript, React and more. Learn about my journey and passion for creating innovative web experiences."
+          property="og:description">
+    <meta content="https://kinangh98.github.io/" property="og:url">
+    <meta content="website" property="og:type">
+    <meta content="https://kinangh98.github.io/pages-screenshots/index-social-media-image.jpg" property="og:image">
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="Ahmed Kinan Ghbash | A web development enthusiast." name="twitter:title">
+    <meta content="I'm Ahmed Kinan Ghbash, a passionate web developer showcasing my skills and projects. Explore my portfolio to discover my expertise in HTML, CSS, JavaScript, React and more. Learn about my journey and passion for creating innovative web experiences."
+          name="twitter:description">
+    <meta content="https://kinangh98.github.io/pages-screenshots/index-social-media-image.jpg" name="twitter:image">
+    <meta content="https://kinangh98.github.io/" name="twitter:url">
+
+    <title>Ahmed Kinan Ghbash | A web development enthusiast.</title>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
     <link href="index-stylesheet.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--    Awake the chat-app websocket server cuz it will take some time. -->
+    <script>
+        window.addEventListener('load', () =>
+        {
+            new WebSocket('wss://chat-app-websocket-server.onrender.com/');
+        });
+    </script>
 </head>
 <body>
 <header>
     <div class="header">
         <div class="mobile-header">
-            <a href="index.html" style="line-height: 0;"><img
-                    alt="Website logo."
-                    src="website-logo.png"
-                    width="45px"></a>
+            <a href="index.html" style="line-height: 0;">
+                <img alt="Website logo." class="logo"
+                     src="images/my-logo.png"
+                     width="45px"></a>
             <button class="circularBtn" id="hamburgerBtn"><i
                     class="fa-solid fa-bars fa-flip-both"></i>
             </button>
         </div>
         <div class="header-links">
-            <a class="header-link" href="">Coming soon...</a>
-            <a class="header-link" href="">Coming soon...</a>
-            <a class="header-link" href="">Coming soon...</a>
+            <a class="header-link" href="#projects-header" onclick="closeSideBarOnMobile()">Projects</a>
+            <a class="header-link" href="mailto:kinangh98@gmail.com">Contact</a>
+            <a class="header-link"
+               href="https://www.canva.com/design/DAEQ9fb79b8/V5nJWy88hmShnBnUfleW2A/edit?utm_content=DAEQ9fb79b8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">About</a>
             <button class="circularBtn" id="themeToggle" onclick="toggleTheme()" title="Switch website theme"><i
                     class="fa-solid fa-sun"></i>
             </button>
+            <div class="sideBarCloser" onclick="toggleHamburgerMenu()"></div>
         </div>
     </div>
 </header>
+
+<!--    My Bio-->
+
 <div style="display: flex; justify-content: center">
     <div class="bio-container">
-        <div class="bio-text"><h3 style="margin: 0;">Hi! I'm Kinan</h3>
-            <br>A web development enthusiast. This website is my playground for learning and
-            experimenting with code. Here you'll find projects I'm working on, from the basics to new things I'm
-            exploring.
-            Check back often to see my progress!
+        <div class="profile-pic-container">
+            <svg viewBox="0 0 573.75 527.31">
+                <defs>
+                    <style>
+                        .cls-4 {
+                            clip-path: url(#clip-path);
+                        }</style>
+                    <clipPath id="clip-path" transform="translate(-14.54 -0.79)">
+                        <path class="cls-1"
+                              d="M104.59,423.4c58.48,21.87,360.8,9,412.61-12.63s-96.84-71-101.75-117.19,105.56-110,72.28-160C381.85-25.54,152.54,96.64,99,121s66.43,108.18,67.36,158.59-120.22,122-61.75,143.85,360.8,9,412.61-12.63"/>
+                    </clipPath>
+                </defs>
+                <path class="profile-pic-background-1"
+                      d="M517.2,410.77c51.81-21.64-96.84-71-101.75-117.19s125-131.22,72.28-160S152.54,96.64,99,121s66.43,108.18,67.36,158.59-120.22,122-61.75,143.85c10.33,3.86,30.67,6.41,53.46,6.24,106.72-.78,316.49-1.06,359.15-18.87"
+                      transform="translate(-14.54 -0.79)"/>
+                <path class="profile-pic-background-1" d="M104.59,423.4" transform="translate(-14.54 -0.79)"/>
+                <path class="profile-pic-background-2"
+                      d="M362.6,3.26C296.73,26.58,46.8,255.09,17.94,310.91s134.09-8.8,171.54,27.28-12.79,202.44,53.13,189.16S556.56,317.9,585,258.51s-134.77-45-171.84-87.5S428.47-20.06,362.6,3.26,46.8,255.09,17.94,310.91"
+                      transform="translate(-14.54 -0.79)"/>
+                <g class="cls-4">
+                    <image transform="translate(99.31 61.63) scale(0.37)" xlink:href="./images/index-profile-pic.webp"/>
+                </g>
+            </svg>
         </div>
-        <img alt="This website developer's picture." class="profile-pic" src="images/index-profile-pic.jpg">
+
+        <div class="bio-description">
+            <h2 style="margin: 0;">Hi! I'm <span style="color: #765995">Kinan</span></h2>
+            <h4 style="font-weight: normal">A web development enthusiast.</h4>
+            <a class="bio-cta" href="mailto:kinangh98@gmail.com">Contact Me</a>
+        </div>
     </div>
 </div>
-<h2 id="projects-header">My Projects</h2>
-<div class="page-container">
 
-    <!--    Green Login Page-->
+<!--    Website Introduction-->
 
-    <div class="card" onclick="location.href='green-login-page.html';">
-        <div class="card-image-container">
-            <img alt="A screenshot of green sign in page." class="card-image"
-                 src="pages-screenshots/green-login-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Tranquil Login</h2>
-            <p class="card-desc">A verdant UI concept for a
-                calm login experience. (UI prototype)
-            </p>
-            <a class="card-cta" href="green-login-page.html">View Page</a>
-        </div>
-    </div>
+<div class="website-introduction">
+    <p>This website is my playground for learning and
+        experimenting with code. Here you'll find projects I'm working on, from the basics to new things I'm
+        exploring.
+        Check back often to see my progress!</p>
+</div>
 
-    <!--    Purple Signup Page -->
+<h1 id="projects-header">My Projects</h1>
 
-    <div class="card" onclick="location.href='purple-signup-page/purple-signup-page.html';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a purple sign up screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Amethyst Signup</h2>
-            <p class="card-desc">A signup screen concept exploring the use of purple. (UI prototype)</p>
-            <a class="card-cta" href="purple-signup-page/purple-signup-page.html">View Page</a>
-        </div>
-    </div>
+<div class="cards-container">
 
-    <!--    Calculator-->
-
-    <div class="card" onclick="location.href='calculator-page/calculator.html';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
+    <!-- Template Definition -->
+    <template id="card-template">
+        <div class="card" onclick="location.href='URL';">
+            <div class="card-image-container">
+                <img alt="IMAGE_ALT" class="card-image" src="IMAGE_SRC">
+            </div>
+            <div class="card-lower-part">
+                <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
+                </svg>
+                <h2 class="card-title">TITLE</h2>
+                <div class="card-tags"></div>
+                <p class="card-desc">DESCRIPTION</p>
+                <div class="card-links">
+                    <a class="card-src-link" href="URL">Source Code</a>
+                    <a class="card-cta" href="URL">View Page</a>
+                </div>
+            </div>
         </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Calculator</h2>
-            <p class="card-desc">A fully functional calculator.</p>
-            <a class="card-cta" href="calculator-page/calculator.html">View Page</a>
-        </div>
-    </div>
-
-    <!--    Facebook Messenger Clone-->
-
-    <div class="card" onclick="location.href='react-apps/facebook-messenger-clone/index.html';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Facebook Messenger Clone</h2>
-            <p class="card-desc">Facebook Messenger clone UI.</p>
-            <a class="card-cta" href="react-apps/facebook-messenger-clone/index.html">View Page</a>
-        </div>
-    </div>
-
-    <!--    Chat App-->
-
-    <div class="card" onclick="location.href='react-apps/chat-app/index.html';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Chaty</h2>
-            <p class="card-desc">A chat app. Open 2 tabs to chat with yourself.</p>
-            <a class="card-cta" href="react-apps/chat-app/index.html">View Page</a>
-        </div>
-    </div>
-
-    <!--    Tic Tac Toe-->
-
-    <div class="card" onclick="location.href='react-apps/react-playground/index.html#/tic-tac-toe';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Tic Tac Toe</h2>
-            <p class="card-desc">A Tic Tac Toe game.</p>
-            <a class="card-cta" href="react-apps/react-playground/index.html#/tic-tac-toe">View Page</a>
-        </div>
-    </div>
-
-    <!--    Groceries-->
-
-    <div class="card" onclick="location.href='react-apps/react-playground/index.html#/groceries';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Groceries</h2>
-            <p class="card-desc">A simple groceries table with search bar.</p>
-            <a class="card-cta" href="react-apps/react-playground/index.html#/groceries">View Page</a>
-        </div>
-    </div>
+    </template>
 
     <!--    To Do List-->
+    <card-component
+            desc="Don't let ideas fade. Capture notes, organize & keep thoughts flowing in a quick & playful way."
+            img-alt="A screenshot of Flow Note, a note-taking app."
+            img-src="react-apps/flow-note/social-media-image.jpg"
+            src-url="https://github.com/KinanGH98/flow-note"
+            tags="React, Local Storage, Framer Motion"
+            title="Flow Note"
+            url="react-apps/flow-note/index.html">
+    </card-component>
 
-    <div class="card" onclick="location.href='react-apps/react-playground/index.html#/to-do-list';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">To Do List</h2>
-            <p class="card-desc">To do list.</p>
-            <a class="card-cta" href="react-apps/react-playground/index.html#/to-do-list">View Page</a>
-        </div>
-    </div>
+    <!--    Chat App-->
+    <card-component
+            desc="Connect in real-time! Chat instantly with others (or yourself in multiple tabs)."
+            img-alt="A screenshot of Chaty, a real-time chat app."
+            img-src="react-apps/chat-app/social-media-image.jpg"
+            src-url="https://github.com/KinanGH98/chaty"
+            tags="React, WebSocket, Node.JS"
+            title="Chaty"
+            url="react-apps/chat-app/index.html">
+    </card-component>
 
-    <!--    Weather App-->
+    <!--    Facebook Messenger Clone-->
+    <card-component desc="UI replica of the Facebook Messenger mobile app (Mockup)."
+                    img-alt="A screenshot of a calculator screen."
+                    img-src="react-apps/messenger/social-media-image.jpg"
+                    src-url="https://github.com/KinanGH98/facebook-messenger-clone"
+                    tags="React, Mockup, Router"
+                    title="Facebook Messenger Clone"
+                    url="react-apps/messenger/index.html">
+    </card-component>
 
-    <div class="card" onclick="location.href='react-apps/react-playground/index.html#/weather';">
-        <div class="card-image-container">
-            <img alt="A screenshot of a calculator screen." class="card-image"
-                 src="pages-screenshots/purple-signup-page.jpg">
-        </div>
-        <div class="card-lower-part">
-            <svg viewBox="0 0 35 30.6" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33,3.5H4.7C3.8,3.5,3,3.4,2.2,3C1.1,2.4,0.3,1.4,0.1,0C0.1,0,0,0,0,0v13.6v13.5v1.5c0,1.1,0.9,2,2,2h1.5h16.8 H33c1.1,0,2-0.9,2-2V5.5C35,4.4,34.1,3.5,33,3.5z"/>
-            </svg>
-            <h2 class="card-title">Weather</h2>
-            <p class="card-desc">A simple weather check from an API.</p>
-            <a class="card-cta" href="react-apps/react-playground/index.html#/weather">View Page</a>
-        </div>
-    </div>
+    <!--    Green Login Page-->
+    <card-component desc="A verdant UI concept for a calm login experience. (UI prototype)"
+                    img-alt="A screenshot of green sign in page."
+                    img-src="pages-screenshots/green-login-page-social-media-image.jpg"
+                    src-url="https://github.com/KinanGH98/KinanGH98.github.io/blob/main/green-login-page.html"
+                    tags="Basic, Prototype"
+                    title="Tranquil Login"
+                    url="green-login-page.html">
+    </card-component>
+
+    <!--    Purple Signup Page -->
+    <card-component desc="A signup screen concept exploring the use of purple. (UI prototype)"
+                    img-alt="A screenshot of a purple sign up screen."
+                    img-src="pages-screenshots/purple-signup-page-social-media-image.jpg"
+                    src-url="https://github.com/KinanGH98/KinanGH98.github.io/tree/main/purple-signup-page"
+                    tags="Basic, Prototype"
+                    title="Amethyst Signup"
+                    url="purple-signup-page/purple-signup-page.html">
+    </card-component>
+
+    <!--    Calculator-->
+    <card-component desc="Unlock basic math magic! This JavaScript calculator handles basic arithmetic."
+                    img-alt="A screenshot of a calculator screen."
+                    img-src="pages-screenshots/mini-math-social-media-image.jpg"
+                    src-url="https://github.com/KinanGH98/KinanGH98.github.io/tree/main/calculator-page"
+                    tags="Vanilla JS, Basic"
+                    title="MiniMath"
+                    url="calculator-page/calculator.html">
+    </card-component>
+    
+    <!--    &lt;!&ndash;    Tic Tac Toe&ndash;&gt;-->
+    <!--    <card-component desc="A Tic Tac Toe game."-->
+    <!--                    img-alt="A screenshot of a calculator screen."-->
+    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
+    <!--                    src-url="react-apps/chat-app/index2.html"-->
+    <!--                    tags="React, Game, State"-->
+    <!--                    title="Tic Tac Toe"-->
+    <!--                    url="react-apps/react-playground/index.html#/tic-tac-toe">-->
+    <!--    </card-component>-->
+
+    <!--    &lt;!&ndash;    Groceries&ndash;&gt;-->
+    <!--    <card-component desc="A simple groceries table with search bar."-->
+    <!--                    img-alt="A screenshot of a calculator screen."-->
+    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
+    <!--                    src-url="react-apps/chat-app/index2.html"-->
+    <!--                    tags="React, Search Bar, Basic"-->
+    <!--                    title="Groceries"-->
+    <!--                    url="react-apps/react-playground/index.html#/groceries">-->
+    <!--    </card-component>-->
+
+    <!--    &lt;!&ndash;    Weather App&ndash;&gt;-->
+    <!--    <card-component desc="A simple weather check from an API."-->
+    <!--                    img-alt="A screenshot of a calculator screen."-->
+    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
+    <!--                    src-url="react-apps/chat-app/index2.html"-->
+    <!--                    tags="React, API, JSON, Basic"-->
+    <!--                    title="Weather"-->
+    <!--                    url="react-apps/react-playground/index.html#/weather">-->
+    <!--    </card-component>-->
 
 </div>
+
 <footer>
     <div class="footer">
         <div class="footer-links">
@@ -216,10 +246,10 @@
                     class="fa-brands fa-linkedin"></i></a>
         </div>
         <div class="footer-text">
-            <a href="index.html" id="footer-website-logo"><img
-                    alt="Website logo."
-                    src="website-logo.png"
-                    width="80px"></a>
+            <a href="index.html">
+                <img alt="Website logo." class="logo-full"
+                     src="images/my-logo-full.png"
+                     width="300px"></a>
             <br><br>
             Made by Kinan, a web development student.
             <br>
