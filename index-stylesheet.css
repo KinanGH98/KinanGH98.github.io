@@ -15,7 +15,7 @@
     --accent-color: #768a2b;
 
     .logo-full {
-        content: url("images/my-logo-full-dark.png");
+        content: url("images/my-logo-full-dark.svg");
     }
 }
 
@@ -69,9 +69,8 @@ button {
 .header {
     margin: auto;
     background-color: var(--neutral-color);
-    backdrop-filter: blur(7px);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     min-height: var(--header-height);
     position: fixed;
@@ -87,9 +86,7 @@ button {
 
 .header-links {
     width: 70%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: contents;
     box-sizing: border-box;
     position: relative;
 }
@@ -295,7 +292,6 @@ button {
 .website-introduction {
     background-image: url("images/pattern.svg");
     background-repeat: no-repeat;
-    /*background-size: 25%;*/
     font-size: 1.5rem;
     background-color: var(--neutral-color-2);
     padding: 75px;
@@ -314,6 +310,7 @@ button {
     .website-introduction {
         background-size: 50%;
         margin-top: 0;
+        padding: 35px;
     }
 }
 
@@ -335,6 +332,8 @@ button {
 }
 
 .card {
+    width: 100%;
+    max-width: var(--card-max-width);
     border-radius: 25px;
     cursor: pointer;
     color: var(--secondary-color);
@@ -346,7 +345,8 @@ button {
 }
 
 .card-image {
-    max-width: var(--card-max-width);
+    /*max-width: var(--card-max-width);*/
+    width: 100%;
     height: 255px;
     object-fit: cover;
     transition: transform 0.25s, background 2s;
@@ -395,8 +395,6 @@ button {
     font-size: 17px;
     text-decoration: none;
     background-color: var(--primary-color);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     color: rgb(239, 230, 255);
     padding: 13px;
     border-radius: 18px;
@@ -452,12 +450,25 @@ button {
     max-width: var(--card-max-width);
 }
 
+.card-lower-part::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neutral-color-2);
+    z-index: -1;
+}
+
 .card-lower-part svg {
     fill: var(--neutral-color-2);
     position: absolute;
     z-index: -1;
     width: 100%;
     top: -25px;
+    left: 0;
+    right: 0;
 }
 
 .footer {

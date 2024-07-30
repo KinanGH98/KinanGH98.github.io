@@ -11,13 +11,14 @@ function toggleHamburgerMenu(e)
     if (menuOpened)
     {
         hamburgerMenu.style.display = "none";
+        console.log('none')
         menuOpened = false;
         document.getElementById("hamburgerBtn").querySelector("i").className = "fa-solid fa-bars fa-flip";
         hamburgerMenu.classList.remove('header-links-fade');
     }
     else if (!menuOpened)
     {
-        hamburgerMenu.style.display = "flex";
+        hamburgerMenu.style.display = (window.innerWidth > 800) ? "contents" : "flex";
         menuOpened = true;
         document.getElementById("hamburgerBtn").querySelector("i").className = "fa-solid fa-xmark fa-spin fa-spin-reverse";
     }
