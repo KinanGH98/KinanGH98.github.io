@@ -1,7 +1,5 @@
 ﻿const hamburgerMenu = document.querySelector(".header-links");
 let menuOpened;
-let currentThemeSetting = localStorage.getItem("theme") ?? "light";
-setTheme(currentThemeSetting);
 
 window.onresize = screenResized;
 document.getElementById("hamburgerBtn").addEventListener("click", toggleHamburgerMenu);
@@ -36,23 +34,6 @@ function screenResized()
     if (window.innerWidth > 800 && !menuOpened) toggleHamburgerMenu();
     // Disable the links div on mobile. 
     else if (window.innerWidth < 800 && menuOpened) toggleHamburgerMenu();
-}
-
-function toggleTheme()
-{
-    currentThemeSetting = currentThemeSetting === "dark" ? "light" : "dark";
-    setTheme(currentThemeSetting);
-}
-
-function setTheme(theme)
-{
-    document.querySelector("html").setAttribute("data-theme", theme);
-
-    // Change the toggle button icon.
-    let icon = theme === "light" ? "fa-solid fa-moon fa-fade" : "fa-solid fa-sun fa-beat";
-    document.getElementById("themeToggle").querySelector("i").className = icon;
-
-    localStorage.setItem("theme", theme);
 }
 
 function closeSideBarOnMobile()

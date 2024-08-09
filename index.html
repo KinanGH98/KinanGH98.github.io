@@ -62,9 +62,27 @@
             <a class="header-link" href="mailto:kinangh98@gmail.com">Contact</a>
             <a class="header-link"
                href="https://www.canva.com/design/DAEQ9fb79b8/V5nJWy88hmShnBnUfleW2A/edit?utm_content=DAEQ9fb79b8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">About</a>
-            <button class="circularBtn" id="themeToggle" onclick="toggleTheme()" title="Switch website theme"><i
-                    class="fa-solid fa-sun"></i>
-            </button>
+
+            <div class="themeSelectWrapper">
+                <button class="circularBtn" id="themeButton" onclick="toggleSelectMenu()">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+                <div class="themeOptions" id="themeOptions">
+                    <div class="themeOption" data-icon="fa-solid fa-wand-magic-sparkles fa-shake" data-value="os"
+                         onclick="selectTheme('os')">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> System
+                    </div>
+                    <div class="themeOption" data-icon="fa-solid fa-sun fa-beat" data-value="light"
+                         onclick="selectTheme('light')">
+                        <i class="fa-solid fa-sun"></i> Light
+                    </div>
+                    <div class="themeOption" data-icon="fa-solid fa-moon fa-fade" data-value="dark"
+                         onclick="selectTheme('dark')">
+                        <i class="fa-solid fa-moon"></i> Dark
+                    </div>
+                </div>
+            </div>
+
             <div class="sideBarCloser" onpointerdown="toggleHamburgerMenu()"></div>
         </div>
     </div>
@@ -274,4 +292,5 @@
 </footer>
 </body>
 <script src="index-script.js"></script>
+<script src="theme-manager.js"></script>
 </html>

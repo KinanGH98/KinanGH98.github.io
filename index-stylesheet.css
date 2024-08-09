@@ -128,9 +128,57 @@ button {
     filter: drop-shadow(0 0 5px var(--secondary-color));
 }
 
-/* Disable the side bar closer on desktop.  */
+/* Disable the side bar closer on desktop. */
 .sideBarCloser {
     display: none;
+}
+
+.themeSelectWrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 50;
+}
+
+.themeOptions {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: var(--neutral-color-2);
+    border-radius: var(--i-radius);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.themeOption {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: background-color 200ms ease-in-out;
+}
+
+.themeOption i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.themeOption,
+#themeButton {
+    transition: filter 200ms ease-in-out;
+    background-color: transparent;
+    --fa-animation-iteration-count: 1;
+}
+
+.themeOption:hover,
+#themeButton:hover {
+    filter: drop-shadow(0 0 6px var(--secondary-color));
+}
+
+#themeButton > i {
+    font-size: 1rem;
 }
 
 @media all and (max-width: 800px) {
@@ -151,10 +199,8 @@ button {
         display: flex;
     }
 
-    #themeToggle {
-        align-self: flex-end;
-        margin-top: 50px;
-        z-index: 10;
+    .themeSelectWrapper {
+        margin-left: auto;
     }
 
     .header-links {
@@ -193,18 +239,6 @@ button {
 
 .circularBtn:active {
     background-color: #818181;
-}
-
-#themeToggle {
-    background-color: transparent;
-    color: var(--secondary-color);
-    font-size: 19px;
-    --fa-animation-iteration-count: 1;
-    transition: filter 200ms ease-in-out;
-}
-
-#themeToggle:hover {
-    filter: drop-shadow(0 0 5px var(--secondary-color));
 }
 
 .bio-container {
@@ -345,7 +379,6 @@ button {
 }
 
 .card-image {
-    /*max-width: var(--card-max-width);*/
     width: 100%;
     height: 255px;
     object-fit: cover;
