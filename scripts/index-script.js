@@ -72,8 +72,18 @@ class CardComponent extends HTMLElement
             });
         }
 
+        // Set the display of the parent (the new element that is replacing the <template> tag) to contents to prevent it from interfering with layout.
+        this.style.display = 'contents';
         this.appendChild(content);
     }
 }
 
 customElements.define('card-component', CardComponent);
+
+function showMore()
+{
+    //removes the link
+    // document.getElementById('link').parentElement.removeChild('link');
+    //shows the #more
+    document.getElementById('more').style.display = "block";
+}
