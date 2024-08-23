@@ -325,27 +325,84 @@ button {
 }
 
 .website-introduction {
-    background-image: url("images/pattern.svg");
-    background-repeat: no-repeat;
     font-size: 1.5rem;
-    background-color: var(--neutral-color-2);
-    padding: 75px;
+    padding: 40px 75px;
     margin-top: calc(var(--whole-page-margin) + 25px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+    background-color: var(--accent-color);
 }
 
 .website-introduction > p {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+    width: 50%;
     line-height: 2rem;
     color: var(--secondary-color);
+    text-align: center;
+}
+
+.website-introduction-cards {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, fit-content(100%));
+    grid-auto-rows: minmax(75px, 100px);
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.website-introduction-cards img {
+    width: 80px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: var(--accent-color) 2px solid;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 2px 10px;
+    animation: fly 3s ease-in-out infinite;
+    animation-play-state: running;
+}
+
+.website-introduction-cards > img:nth-child(odd) {
+    margin-top: 50px;
+    animation: fly-odd 3s ease-in-out infinite;
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fly-odd {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
 }
 
 @media all and (max-width: 800px) {
     .website-introduction {
-        background-size: 50%;
         margin-top: 0;
         padding: 35px;
+        text-align: center;
+        background-image: url("images/pattern.svg");
+        background-repeat: no-repeat;
+        background-color: var(--neutral-color-2);
+        background-size: 150px;
+    }
+
+    .website-introduction > p {
+        width: 100%
+    }
+
+    .website-introduction-cards {
+        display: none;
     }
 }
 
