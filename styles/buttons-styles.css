@@ -1,0 +1,45 @@
+﻿button {
+    color: var(--primary-color);
+    border: 0;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 12px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--neutral-color);
+    font-family: inherit;
+}
+
+.button:hover {
+    background-color: #c5c5c5;
+}
+
+.button:active {
+    background-color: #818181;
+}
+
+.circularBtn {
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 500px;
+    font-size: 16px;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--neutral-color);
+}
+
+/*Dont reorder the next 2 styles.*/
+.circularBtn:hover {
+    background-color: #c5c5c5;
+}
+
+.circularBtn:active {
+    background-color: #818181;
+}

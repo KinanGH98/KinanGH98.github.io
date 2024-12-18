@@ -9,7 +9,6 @@ function toggleHamburgerMenu(e)
     if (menuOpened)
     {
         hamburgerMenu.style.display = "none";
-        console.log('none')
         menuOpened = false;
         document.getElementById("hamburgerBtn").querySelector("i").className = "fa-solid fa-bars fa-flip";
         hamburgerMenu.classList.remove('header-links-fade');

@@ -39,7 +39,6 @@ function toggleSelectMenu()
 
 function closeMenuOnMouseClick(event)
 {
-    console.log('pressed')
     const optionsMenu = document.getElementById("themeOptions");
     const themeButton = document.getElementById("themeButton");
 

@@ -14,7 +14,7 @@
           name="keywords"/>
     <meta content="Ahmed Kinan Ghbash" name="author">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta content="Ahmed Kinan Ghbash | A web development enthusiast." property="og:title">
     <meta content="I'm Ahmed Kinan Ghbash, a passionate web developer showcasing my skills and projects. Explore my portfolio to discover my expertise in HTML, CSS, JavaScript, React and more. Learn about my journey and passion for creating innovative web experiences."
           property="og:description">
@@ -32,12 +32,20 @@
 
     <title>Ahmed Kinan Ghbash | A web development enthusiast.</title>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/8955b6fb14.js"></script>
-    <link href="index-stylesheet.css" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+    <link href="/styles/header-styles.css" rel="stylesheet">
+    <link href="/styles/hero-styles.css" rel="stylesheet">
+    <link href="/styles/introduction-styles.css" rel="stylesheet">
+    <link href="/styles/card-styles.css" rel="stylesheet">
+    <link href="/styles/footer-styles.css" rel="stylesheet">
+    <link href="/styles/theme-select-styles.css" rel="stylesheet">
+    <link href="/styles/buttons-styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
 
-    <!--    Awake the chat-app websocket server cuz it will take some time. -->
+    <!--    Awake the chat-app and chart-hive websocket servers cuz it will take some time. -->
     <script>
         window.addEventListener('load', () =>
         {
@@ -47,52 +55,70 @@
     </script>
 </head>
 <body>
-<header>
-    <div class="header">
-        <div class="mobile-header">
-            <a href="index.html" style="line-height: 0;">
-                <img alt="Website logo." class="logo"
-                     src="images/my-logo.png"
-                     width="45px"></a>
-            <button class="circularBtn" id="hamburgerBtn"><i
-                    class="fa-solid fa-bars fa-flip-both"></i>
-            </button>
-        </div>
-        <div class="header-links">
-            <a class="header-link" href="#projects-header" onclick="closeSideBarOnMobile()">Projects</a>
-            <a class="header-link" href="mailto:kinangh98@gmail.com">Contact</a>
-            <a class="header-link"
-               href="https://www.canva.com/design/DAEQ9fb79b8/V5nJWy88hmShnBnUfleW2A/edit?utm_content=DAEQ9fb79b8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">About</a>
 
-            <div class="themeSelectWrapper">
-                <button class="circularBtn" id="themeButton" onclick="toggleSelectMenu()">
-                    <i class="fa-solid fa-sun" id="themeIcon"></i>
-                </button>
-                <div class="themeOptions" id="themeOptions">
-                    <div class="themeOption" data-icon="fa-solid fa-wand-magic-sparkles fa-shake" data-value="os"
-                         onclick="selectTheme('os')">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> System
-                    </div>
-                    <div class="themeOption" data-icon="fa-solid fa-sun fa-beat" data-value="light"
-                         onclick="selectTheme('light')">
-                        <i class="fa-solid fa-sun"></i> Light
-                    </div>
-                    <div class="themeOption" data-icon="fa-solid fa-moon fa-fade" data-value="dark"
-                         onclick="selectTheme('dark')">
-                        <i class="fa-solid fa-moon"></i> Dark
-                    </div>
+<!-- Header -->
+
+<header class="header fade-in">
+    <div class="mobile-header">
+        <a href="index.html" style="line-height: 0;">
+            <img alt="Website logo." class="logo"
+                 src="images/my-logo.png"
+                 width="45px"></a>
+        <button class="circularBtn" id="hamburgerBtn"><i
+                class="fa-solid fa-bars fa-flip-both"></i>
+        </button>
+    </div>
+    <div class="header-links">
+        <a class="header-link" href="#projects-header" onclick="closeSideBarOnMobile()">Projects</a>
+        <a class="header-link" href="mailto:kinangh98@gmail.com">Contact</a>
+        <a class="header-link"
+           href="https://www.canva.com/design/DAEQ9fb79b8/V5nJWy88hmShnBnUfleW2A/edit?utm_content=DAEQ9fb79b8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">About</a>
+
+        <div class="themeSelectWrapper">
+            <button class="circularBtn" id="themeButton" onclick="toggleSelectMenu()">
+                <i class="fa-solid fa-sun" id="themeIcon"></i>
+            </button>
+            <div class="themeOptions" id="themeOptions">
+                <div class="themeOption" data-icon="fa-solid fa-wand-magic-sparkles fa-shake" data-value="os"
+                     onclick="selectTheme('os')">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> System
+                </div>
+                <div class="themeOption" data-icon="fa-solid fa-sun fa-beat" data-value="light"
+                     onclick="selectTheme('light')">
+                    <i class="fa-solid fa-sun"></i> Light
+                </div>
+                <div class="themeOption" data-icon="fa-solid fa-moon fa-fade" data-value="dark"
+                     onclick="selectTheme('dark')">
+                    <i class="fa-solid fa-moon"></i> Dark
                 </div>
             </div>
-
-            <div class="sideBarCloser" onpointerdown="toggleHamburgerMenu()"></div>
         </div>
+
+        <div class="sideBarCloser" onpointerdown="toggleHamburgerMenu()"></div>
     </div>
 </header>
 
-<!--    My Bio-->
+<!--    Hero Section (Bio)-->
 
-<div style="display: flex; justify-content: center">
+<section style="display: flex; justify-content: center ; position: relative">
     <div class="bio-container fade-in">
+
+        <div class="bio-description">
+            <h1>Hello I'm</h1>
+            <h1 style="color: #765995">Ahmed Kinan Ghbash</h1>
+            <h1>Front-End Developer</h1>
+
+            <p>
+                I specialize in crafting interactive, user-focused web experiences.
+                With a passion for detail and design, I bring ideas to life through clean and responsive code.
+            </p>
+
+            <div class="bio-buttons">
+                <a class="bio-cta contact-btn" href="mailto:kinangh98@gmail.com">Get In Touch</a>
+                <a class="bio-cta bio-cta-outline" href="#projects-header" style="margin-right: 1rem;">View My Work</a>
+            </div>
+        </div>
+
         <div class="profile-pic-container">
             <svg viewBox="0 0 573.75 527.31">
                 <defs>
@@ -117,43 +143,72 @@
                 </g>
             </svg>
         </div>
-
-        <div class="bio-description">
-            <h2 style="margin: 0;">Hi! I'm <span style="color: #765995">Kinan</span></h2>
-            <h4 style="font-weight: normal">A web development enthusiast</h4>
-            <a class="bio-cta" href="mailto:kinangh98@gmail.com">Contact Me</a>
-        </div>
     </div>
-</div>
+
+    <!-- Flying Shapes Decoration -->
+    <div class="flying-shapes">
+        <svg class="flying-shape shape-1" height="100" width="100">
+            <circle cx="50" cy="50" fill="rgba(118, 89, 149, 0.8)" r="5"/>
+        </svg>
+        <svg class="flying-shape shape-2" height="80" width="80">
+            <circle cx="40" cy="15" fill="rgba(118, 89, 149, 0.6)" r="15"/>
+        </svg>
+        <svg class="flying-shape shape-3" height="120" width="120">
+            <circle cx="60" cy="15" fill="rgba(118, 89, 149, 0.6)" r="5"/>
+        </svg>
+        <svg class="flying-shape shape-4" height="120" width="120">
+            <circle cx="50" cy="50" fill="rgba(118, 89, 149, 0.7)" r="5"/>
+        </svg>
+        <svg class="flying-shape shape-5" height="120" width="120">
+            <circle cx="50" cy="50" fill="rgba(118, 89, 149, 0.6)" r="10"/>
+        </svg>
+        <svg class="flying-shape shape-6" height="100" width="100">
+            <polygon fill="rgba(118, 89, 149, 0.6)" points="50,15 65,35 55,65 45,65 35,35"/>
+        </svg>
+        <svg class="flying-shape shape-7" height="120" width="120">
+            <circle cx="50" cy="50" fill="rgba(118, 89, 149, 0.3)" r="5"/>
+        </svg>
+        <svg class="flying-shape shape-8" height="100" width="100">
+            <line stroke="rgba(118, 89, 149, 0.7)" stroke-width="3" x1="10" x2="90" y1="10" y2="90"/>
+        </svg>
+        <svg class="flying-shape shape-9" height="120" width="120">
+            <circle cx="50" cy="50" fill="rgba(118, 89, 149, 0.4)" r="12"/>
+        </svg>
+        <svg class="flying-shape shape-10" height="100" width="100">
+            <polygon fill="rgba(118, 89, 149, 0.6)" points="50,15 65,35 55,65 45,65 35,35"/>
+        </svg>
+    </div>
+</section>
 
 <!--    Website Introduction-->
 
-<div class="website-introduction fade-in">
+<section class="website-introduction fade-in">
     <div class="website-introduction-cards">
-        <img src="react-apps/chat-app/social-media-image.jpg">
-        <img src="images/intro-cards-images/react.jpg">
-        <img src="pages-screenshots/green-login-page-social-media-image.jpg">
-        <img src="pages-screenshots/purple-signup-page-social-media-image.jpg">
-        <img src="pages-screenshots/mini-math-social-media-image.jpg">
-        <img src="images/intro-cards-images/bootstrap.jpg">
+        <img alt="small-project-image" src="react-apps/chat-app/social-media-image.jpg">
+        <img alt="small-project-image" src="https://elite-rentals-k.vercel.app/images/social-media-image.jpg">
+        <img alt="small-project-image" src="pages-screenshots/green-login-page-social-media-image.jpg">
+        <img alt="small-project-image" src="images/intro-cards-images/react.jpg">
+        <img alt="small-project-image" src="pages-screenshots/mini-math-social-media-image.jpg">
+        <img alt="small-project-image" src="images/intro-cards-images/bootstrap.jpg">
     </div>
-    <p>This website is my playground for learning and
-        experimenting with code. Here you'll find projects I'm working on, from the basics to new things I'm
-        exploring.
-        Check back often to see my progress</p>
+    <div style="text-align: center">
+        <h1 style="margin: 0; line-height: 2.4rem">Welcome To My Portfolio!</h1>
+        <p>Here, you can explore my latest projects, showcasing my skills in front-end development
+            and my journey in mastering new technologies.</p>
+    </div>
     <div class="website-introduction-cards">
-        <img src="react-apps/cart-ninja/social-media-image.jpg">
-        <img src="images/intro-cards-images/font-awesome.png">
-        <img src="react-apps/flex/social-media-image.jpg">
-        <img src="react-apps/flow-note/social-media-image.jpg">
-        <img src="images/intro-cards-images/supabase.webp">
-        <img src="react-apps/messenger/social-media-image.jpg">
+        <img alt="small-project-image" src="react-apps/cart-ninja/social-media-image.jpg">
+        <img alt="small-project-image" src="images/intro-cards-images/font-awesome.png">
+        <img alt="small-project-image" src="react-apps/flex/social-media-image.jpg">
+        <img alt="small-project-image" src="react-apps/flow-note/social-media-image.jpg">
+        <img alt="small-project-image" src="images/intro-cards-images/supabase.webp">
+        <img alt="small-project-image" src="react-apps/messenger/social-media-image.jpg">
     </div>
-</div>
+</section>
 
 <h1 class="fade-in" id="projects-header">My Projects</h1>
 
-<div class="cards-container">
+<section class="cards-container">
 
     <!-- Template Definition -->
     <template id="card-template">
@@ -175,6 +230,17 @@
             </div>
         </div>
     </template>
+
+    <!--    Elite Rentals-->
+    <card-component
+            desc="Elite Rentals is a car rental platform designed to provide a seamless experience for both administrators and customers. It features an intuitive UI, robust authentication, and dynamic pages for managing cars, bookings, and more."
+            img-alt="A screenshot of Elite Rentals, a car rentals app."
+            img-src="https://elite-rentals-k.vercel.app/images/social-media-image.jpg"
+            src-url="https://github.com/KinanGH98/elite-rentals"
+            tags="Next.js 15, TypeScript, Supabase, Stripe, Tailwind CSS, DaisyUI, Cloudflare Turnstile, Framer Motion, FilePond, Leaflet"
+            title="Elite Rentals"
+            url="https://elite-rentals-k.vercel.app/">
+    </card-component>
 
     <!--    Chart Hive-->
     <card-component
@@ -260,73 +326,36 @@
                     title="Tranquil Login"
                     url="green-login-page.html">
     </card-component>
+</section>
 
-    <!--    Purple Signup Page -->
-    <card-component desc="A signup screen concept exploring the use of purple. (UI prototype)"
-                    img-alt="A screenshot of a purple sign up screen."
-                    img-src="pages-screenshots/purple-signup-page-social-media-image.jpg"
-                    src-url="https://github.com/KinanGH98/KinanGH98.github.io/tree/main/purple-signup-page"
-                    tags="Basic, Prototype"
-                    title="Amethyst Signup"
-                    url="purple-signup-page/purple-signup-page.html">
-    </card-component>
+<!-- CTA Section -->
 
-    <!--    &lt;!&ndash;    Tic Tac Toe&ndash;&gt;-->
-    <!--    <card-component desc="A Tic Tac Toe game."-->
-    <!--                    img-alt="A screenshot of a calculator screen."-->
-    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
-    <!--                    src-url="react-apps/chat-app/index2.html"-->
-    <!--                    tags="React, Game, State"-->
-    <!--                    title="Tic Tac Toe"-->
-    <!--                    url="react-apps/react-playground/index.html#/tic-tac-toe">-->
-    <!--    </card-component>-->
+<section class="cta-section fade-in">
+    <h1 style="margin: 0">Got a Project?</h1>
+    <p>Let's turn your ideas into reality. Reach out to get started!</p>
+    <a class="bio-cta contact-btn" href="mailto:kinangh98@gmail.com">Contact Me</a>
+</section>
 
-    <!--    &lt;!&ndash;    Groceries&ndash;&gt;-->
-    <!--    <card-component desc="A simple groceries table with search bar."-->
-    <!--                    img-alt="A screenshot of a calculator screen."-->
-    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
-    <!--                    src-url="react-apps/chat-app/index2.html"-->
-    <!--                    tags="React, Search Bar, Basic"-->
-    <!--                    title="Groceries"-->
-    <!--                    url="react-apps/react-playground/index.html#/groceries">-->
-    <!--    </card-component>-->
+<!-- Footer -->
 
-    <!--    &lt;!&ndash;    Weather App&ndash;&gt;-->
-    <!--    <card-component desc="A simple weather check from an API."-->
-    <!--                    img-alt="A screenshot of a calculator screen."-->
-    <!--                    img-src="pages-screenshots/mini-math-social-media-image.jpg"-->
-    <!--                    src-url="react-apps/chat-app/index2.html"-->
-    <!--                    tags="React, API, JSON, Basic"-->
-    <!--                    title="Weather"-->
-    <!--                    url="react-apps/react-playground/index.html#/weather">-->
-    <!--    </card-component>-->
-
-</div>
-
-<footer>
-    <div class="footer">
-        <div class="footer-links fade-in">
-            <a class="footer-link" href="mailto:kinangh98@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            <a class="footer-link" href="https://facebook.com/ahmedkinan.ghbash"><i
-                    class="fa-brands fa-facebook"></i></a>
-            <a class="footer-link" href="https://github.com/KinanGH98/"><i class="fa-brands fa-github"></i></a>
-            <a class="footer-link" href="https://www.linkedin.com/in/kinan-ghbash/"><i
-                    class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <div class="footer-text fade-in">
-            <a href="index.html">
-                <img alt="Website logo." class="logo-full"
-                     src="images/my-logo-full.svg"
-                     width="300px"></a>
-            <br><br>
-            Made by Kinan, a web development student.
-            <br>
-            <br>
-            Made with HTML, CSS, and a sprinkle of JavaScript.
-            <br>
-            <br>
-            This website is a constant experiment. Check back often to see the updates!
-        </div>
+<footer class="footer">
+    <div class="footer-links fade-in">
+        <a class="footer-link" href="mailto:kinangh98@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a class="footer-link" href="https://facebook.com/ahmedkinan.ghbash"><i
+                class="fa-brands fa-facebook"></i></a>
+        <a class="footer-link" href="https://github.com/KinanGH98/"><i class="fa-brands fa-github"></i></a>
+        <a class="footer-link" href="https://www.linkedin.com/in/kinan-ghbash/"><i
+                class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="footer-text fade-in">
+        <a href="index.html">
+            <img alt="Website logo." class="logo-full"
+                 src="images/my-logo-full.svg"
+                 width="300px"></a>
+        <br><br>
+        Made with HTML, CSS, and a sprinkle of JavaScript.
+        <br><br>
+        © Ahmed Kinan Ghbash 2024
     </div>
 </footer>
 </body>
