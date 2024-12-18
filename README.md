@@ -15,7 +15,7 @@ desire to create functional, aesthetic, and dynamic digital experiences.
 You can get in touch with me via the following:
 
 - **Email**: [kinangh98@gmail.com](mailto:kinangh98@gmail.com)
-- **LinkedIn**: [Ahmed Kinan Ghbash](https://www.linkedin.com/in/kinangh98)
+- **LinkedIn**: [Ahmed Kinan Ghbash](https://www.linkedin.com/in/kinan-ghbash/)
 
 ## Technologies Used
 
