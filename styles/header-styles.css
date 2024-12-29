@@ -51,6 +51,25 @@
     display: none;
 }
 
+.syrian-flag {
+    user-select: none;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 75px;
+}
+
+.syrian-flag > img {
+    width: 130px;
+    rotate: 45deg;
+    position: relative;
+    right: 13px;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.1));
+    user-select: all;
+    pointer-events: all;
+}
+
 @media all and (max-width: 800px) {
     .header {
         flex-direction: column;
@@ -95,5 +114,10 @@
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    .syrian-flag > img {
+        width: 100px;
+        right: -8px;
     }
 }

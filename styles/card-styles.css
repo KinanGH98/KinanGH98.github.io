@@ -4,6 +4,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    justify-items: center;
     gap: var(--whole-page-margin);
     width: 90%;
 }
@@ -147,9 +148,23 @@
     right: 0;
 }
 
-/* Horizontal cards on desktop. */
-@media all and (min-width: 800px) {
+/* 2 columns on tablets. */
+@media all and (min-width: 850px) {
     .cards-container {
+        display: block;
+        columns: 2;
+        column-gap: 20px;
+    }
+
+    .card {
+        margin-bottom: 40px;
+    }
+}
+
+/* Horizontal cards on desktop. */
+@media all and (min-width: 1250px) {
+    .cards-container {
+        display: flex;
         flex-direction: column;
     }
 
@@ -158,6 +173,7 @@
         min-width: 100%;
         display: flex;
         gap: 19px;
+        margin-bottom: unset;
     }
 
     .card-lower-part {
@@ -187,7 +203,7 @@
     }
 
     .card-image-container {
-        max-width: 35%;
+        width: 750px;
         border-radius: var(--image-border-radius-desktop);
     }
 
