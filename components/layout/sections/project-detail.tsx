@@ -270,9 +270,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
                   className="group flex items-baseline justify-between gap-space-4 py-space-4 sm:py-space-5"
                 >
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-display font-extrabold text-h2 text-ink leading-[0.95] tracking-[-0.02em] transition-colors duration-200 group-hover:text-purple-loud">
+                    <h2 className="font-display font-extrabold text-h2 text-ink leading-[0.95] tracking-[-0.02em] transition-colors duration-200 group-hover:text-purple-loud">
                       <span className="underline-draw-bold">{p.title}</span>
-                    </h3>
+                    </h2>
                     <p className="mt-2 font-body text-small text-ink-muted">
                       {p.oneLiner}
                     </p>

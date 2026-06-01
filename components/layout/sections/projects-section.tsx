@@ -90,9 +90,9 @@ export default function SelectedWork() {
               onBlur={() => setHovered(null)}
             >
               <div className="flex-1 min-w-0">
-                <h3 className="font-display font-extrabold text-h1 text-ink leading-[0.95] tracking-[-0.02em] transition-colors duration-200 group-hover:text-purple-loud group-focus-visible:text-purple-loud">
+                <h2 className="font-display font-extrabold text-h1 text-ink leading-[0.95] tracking-[-0.02em] transition-colors duration-200 group-hover:text-purple-loud group-focus-visible:text-purple-loud">
                   <span className="underline-draw-bold">{p.title}</span>
-                </h3>
+                </h2>
                 <p className="mt-space-3 font-body text-body text-ink-muted max-w-[44rem]">
                   {p.oneLiner}
                   <span className="mx-2 text-ink-muted/50">·</span>

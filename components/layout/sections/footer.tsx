@@ -47,11 +47,12 @@ export default function Footer() {
         },
       });
 
-      ScrollTrigger.batch(".footer-meta", {
-        start: "top 90%",
+      ScrollTrigger.create({
+        trigger: ".footer-email",
+        start: "top 80%",
         once: true,
-        onEnter: (batch) => {
-          gsap.to(batch, {
+        onEnter: () => {
+          gsap.to(".footer-meta", {
             y: 0,
             autoAlpha: 1,
             duration: 0.7,

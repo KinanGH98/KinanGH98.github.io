@@ -24,6 +24,7 @@ export default function StickyNav() {
           : "opacity-0 -translate-y-full pointer-events-none"
       }`}
       aria-hidden={!show}
+      inert={!show ? true : undefined}
     >
       <div className="px-gutter h-space-6 flex items-center justify-between">
         <Link
