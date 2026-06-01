@@ -1,0 +1,12 @@
+Kinan Portfolio                                                                                                                                                                                                  
+                                                                                                                                                                                                                   
+Personal portfolio for **Ahmed Kinan Ghbash** — Senior Front-End Developer based in Aleppo, Syria.                                                                                                                 
+                                                                                                                                                                                                                   
+Live at <https://kinangh98.github.io>.                                                                                                                                                                             
+                                                                                                                                                                                                                   
+## Stack                                                                                                                                                                                                           
+                                                                                                                                                                                                                   
+- Next.js (App Router, static export)                                                                                                                                                                           
+- React 
+- TypeScript                                                                                                                                                                                             
+- Tailwind                                                                                                                                                                                                   
