@@ -1,11 +1,76 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
 import { profile, nav } from "@/lib/content";
 
+gsap.registerPlugin(useGSAP, SplitText);
+
 export default function Hero() {
+  const root = useRef<HTMLElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
+  const periodRef = useRef<HTMLSpanElement>(null);
+
+  useGSAP(
+    () => {
+      if (!nameRef.current) return;
+
+      SplitText.create(nameRef.current, {
+        type: "lines",
+        mask: "lines",
+        linesClass: "hero-line",
+        autoSplit: true,
+        onSplit(self) {
+          const tl = gsap.timeline({
+            defaults: { duration: 0.7, ease: "expo.out" },
+          });
+
+          tl.from(
+            ".hero-corner-item",
+            { y: -8, autoAlpha: 0, stagger: 0.05 },
+            0,
+          )
+            .from(self.lines, { yPercent: 110, stagger: 0.08 }, 0.15)
+            .from(".hero-role", { y: 12, autoAlpha: 0 }, "<0.3")
+            .from(
+              ".hero-portrait",
+              { autoAlpha: 0, scale: 1.04, duration: 0.9 },
+              0.3,
+            )
+            .from(
+              ".hero-caption",
+              { y: 8, autoAlpha: 0, stagger: 0.06 },
+              "<0.2",
+            )
+            .fromTo(
+              periodRef.current,
+              { scale: 1 },
+              {
+                scale: 1.25,
+                duration: 0.22,
+                ease: "back.out(2)",
+                yoyo: true,
+                repeat: 1,
+                transformOrigin: "50% 100%",
+              },
+              0.6,
+            );
+
+          return tl;
+        },
+      });
+    },
+    { scope: root },
+  );
+
   return (
     <section
       id="home"
+      ref={root}
       className="relative min-h-svh w-full px-gutter pt-space-4 pb-space-5 flex flex-col"
     >
       {/* Corner nav */}
@@ -13,7 +78,7 @@ export default function Hero() {
         <Link
           href="#home"
           aria-label="Top"
-          className="font-display text-small text-ink tracking-tight"
+          className="hero-corner-item font-display text-small text-ink tracking-tight"
         >
           {profile.initials}
           <span className="text-lime">.</span>
@@ -22,7 +87,7 @@ export default function Hero() {
         <nav aria-label="Primary">
           <ul className="flex gap-space-4 sm:gap-space-5">
             {nav.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="hero-corner-item">
                 <Link
                   href={item.href}
                   className="underline-draw label-small hover:text-ink transition-colors duration-200"
@@ -39,15 +104,21 @@ export default function Hero() {
       {/* Main stage */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-space-5 items-center py-space-5">
         {/* Name + role */}
-        <div className="lg:col-span-8 animate-hero-rise">
-          <h1 className="font-display text-hero text-ink leading-[0.9] tracking-[-0.02em] font-extrabold">
+        <div className="lg:col-span-8">
+          <h1
+            ref={nameRef}
+            className="font-display text-hero text-ink leading-[0.9] tracking-[-0.02em] font-extrabold"
+          >
             <span className="block">Ahmed</span>
             <span className="block">Kinan</span>
             <span className="block">
-              Ghbash<span className="text-lime">.</span>
+              Ghbash
+              <span ref={periodRef} className="text-lime inline-block">
+                .
+              </span>
             </span>
           </h1>
-          <p className="mt-space-4 font-body text-body text-ink-muted max-w-xl">
+          <p className="hero-role mt-space-4 font-body text-body text-ink-muted max-w-xl">
             {profile.role}
             <span className="mx-2 text-ink-muted/50">·</span>
             {profile.roleStack.join(" · ")}
@@ -55,7 +126,7 @@ export default function Hero() {
         </div>
 
         {/* Portrait */}
-        <div className="lg:col-span-4 animate-hero-fade">
+        <div className="hero-portrait lg:col-span-4">
           <div className="relative w-full max-w-[18rem] mx-auto lg:max-w-none aspect-[3/4] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]">
             <Image
               src="/images/photo.png"
@@ -75,8 +146,8 @@ export default function Hero() {
 
       {/* Bottom caption */}
       <footer className="flex items-end justify-between">
-        <p className="label-small">Based in {profile.location}</p>
-        <p className="label-small hidden sm:flex items-center">
+        <p className="hero-caption label-small">Based in {profile.location}</p>
+        <p className="hero-caption label-small hidden sm:flex items-center">
           <span className="text-ink-muted/60 mr-2">scroll</span>
           <span className="animate-bounce block">↓</span>
         </p>

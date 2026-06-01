@@ -3,15 +3,21 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   getFeaturedProjects,
   getThumbnail,
   type Project,
 } from "@/lib/projects";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function SelectedWork() {
   const featured = getFeaturedProjects();
   const [hovered, setHovered] = useState<Project | null>(null);
+  const root = useRef<HTMLElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
 
   const showPreview = Boolean(hovered && hovered.images.length > 0);
@@ -22,20 +28,59 @@ export default function SelectedWork() {
     previewRef.current.style.top = `${e.clientY + 24}px`;
   };
 
+  useGSAP(
+    () => {
+      gsap.set(".work-header > *", { y: 16, autoAlpha: 0 });
+      gsap.set(".work-row", { y: 28, autoAlpha: 0 });
+
+      ScrollTrigger.create({
+        trigger: ".work-header",
+        start: "top 88%",
+        once: true,
+        onEnter: () => {
+          gsap.to(".work-header > *", {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.6,
+            ease: "expo.out",
+            stagger: 0.08,
+          });
+        },
+      });
+
+      ScrollTrigger.batch(".work-row", {
+        start: "top 88%",
+        once: true,
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "expo.out",
+            stagger: 0.09,
+            overwrite: true,
+          });
+        },
+      });
+    },
+    { scope: root },
+  );
+
   return (
     <section
       id="work"
+      ref={root}
       className="px-gutter py-space-7 lg:py-space-8 scroll-mt-space-5"
       onMouseMove={handleMove}
     >
-      <header className="flex items-baseline justify-between mb-space-5">
+      <header className="work-header flex items-baseline justify-between mb-space-5">
         <p className="label-small">Selected Work · 2024–2026</p>
         <p className="label-small">{featured.length} projects</p>
       </header>
 
       <ul className="border-t border-b border-hairline divide-y divide-hairline">
         {featured.map((p) => (
-          <li key={p.id}>
+          <li key={p.id} className="work-row">
             <Link
               href={`/projects/${p.id}`}
               className="group flex items-baseline justify-between gap-space-5 py-space-5 sm:py-space-6"

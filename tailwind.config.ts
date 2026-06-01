@@ -51,21 +51,6 @@ const config: Config = {
       transitionTimingFunction: {
         editorial: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
-      keyframes: {
-        "hero-rise": {
-          from: { opacity: "0", transform: "translateY(8px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        "hero-fade": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-      },
-      animation: {
-        "hero-rise": "hero-rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both",
-        "hero-fade":
-          "hero-fade 700ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both",
-      },
     },
   },
   plugins: [],
