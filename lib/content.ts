@@ -40,4 +40,5 @@ export const socials: {label: string; href: string}[] = [
         label: 'Resume',
         href: 'https://drive.google.com/file/d/1kfYk9ImsiMeGEELnQl9HlMLwHB0fNY_l/view?usp=sharing',
     },
+    {label: '+963 940 254 464', href: 'https://wa.me/963940254464'},
 ];
