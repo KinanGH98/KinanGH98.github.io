@@ -178,6 +178,8 @@ export default function Hero()
                             alt="Portrait of Ahmed Kinan Ghbash"
                             fill
                             priority
+                            fetchPriority="high"
+                            loading="eager"
                             sizes="(max-width: 1024px) 80vw, 33vw"
                             className="object-contain grayscale brightness-[0.85] contrast-[1.02]"
                         />
