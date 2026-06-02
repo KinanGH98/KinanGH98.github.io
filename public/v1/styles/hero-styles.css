@@ -1,0 +1,236 @@
+﻿.bio-container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    color: var(--secondary-color);
+    padding: 25px;
+    max-width: 80%;
+    width: 100%;
+    margin-top: calc(var(--header-height) + var(--whole-page-margin) + 60px);
+}
+
+.bio-description h1 {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin: 0;
+}
+
+.bio-description p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--secondary-color);
+}
+
+.bio-buttons {
+    margin-top: 1.6rem;
+    display: flex;
+    gap: 0.5rem;
+    text-wrap: nowrap;
+}
+
+.profile-pic-container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-pic-container > svg {
+    position: absolute;
+    max-width: 500px;
+    margin: 0 8px;
+}
+
+.profile-pic-background-1 {
+    fill: var(--accent-color);
+}
+
+.profile-pic-background-2 {
+    fill: #765995;
+    fill-opacity: 0.95;
+}
+
+.bio-cta {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    text-decoration: none;
+    border-radius: var(--i-radius);
+    padding: 12px 34px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+
+    font-weight: bold;
+    font-size: 1rem;
+    transition: filter 200ms ease-in-out;
+}
+
+.bio-cta:hover {
+    filter: drop-shadow(0 0 12px var(--accent-color));
+}
+
+.bio-cta-outline {
+    border: 2px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: var(--i-radius);
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.bio-cta-outline:hover {
+    background-color: var(--accent-color);
+}
+
+.bio-cta:hover {
+    filter: drop-shadow(0 0 12px var(--accent-color));
+}
+
+@media all and (max-width: 1000px) {
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 95%;
+        margin-top: calc(var(--header-height) + var(--whole-page-margin) - 30px);
+    }
+
+    .bio-description h1 {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+    }
+
+    .bio-description {
+        text-align: center;
+        line-height: 1.6rem;
+    }
+
+    .profile-pic-container {
+        width: 100%;
+        margin-bottom: 2rem;
+        order: -1;
+    }
+
+    .profile-pic-container > svg {
+        position: relative;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .bio-buttons {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
+
+@media all and (max-width: 1000px) and (min-width: 650px) {
+    .bio-description h1 {
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+
+    .bio-buttons {
+        justify-content: center;
+    }
+}
+
+.flying-shapes {
+    opacity: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.flying-shape {
+    position: absolute;
+    animation: fly-circle 6s infinite;
+    opacity: 0;
+}
+
+.shape-1 {
+    top: 10%;
+    left: 15%;
+}
+
+.shape-2 {
+    animation-delay: 0.5s;
+    top: 20%;
+    left: 20%;
+}
+
+.shape-3 {
+    animation-delay: 1.2s;
+    top: 30%;
+    left: 55%;
+}
+
+.shape-4 {
+    animation-delay: 1.7s;
+    top: 85%;
+    left: 40%;
+}
+
+.shape-5 {
+    animation-delay: 2.3s;
+    top: 80%;
+    left: 40%;
+}
+
+.shape-6 {
+    animation-delay: 2.5s;
+    top: 10%;
+    left: 15%;
+}
+
+.shape-7 {
+    animation-delay: 3s;
+    top: 100%;
+    left: 90%;
+}
+
+.shape-8 {
+    animation-delay: 3.3s;
+    top: 85%;
+    left: 55%;
+}
+
+.shape-9 {
+    animation-delay: 3.7s;
+    top: 12%;
+    left: 90%;
+}
+
+.shape-10 {
+    animation-delay: 1.4s;
+    scale: 70%;
+    top: 28%;
+    left: 56%;
+    rotate: 180deg;
+}
+
+@keyframes fly-circle {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(15px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
