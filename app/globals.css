@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --bg: #0d0d0f;
+    --surface: #161619;
+    --hairline: rgba(255, 255, 255, 0.10);
+
+    /* Ink */
+    --ink: #ececea;
+    --ink-muted: #7c7c82;
+
+    /* Purple */
+    --purple: #755893;
+    --purple-loud: #9e74d6;
+    --purple-deep: #4e3b66;
+
+    /* Lime */
+    --lime: #caed4a;
+    --lime-deep: #b2d62e;
+
+    /* Fluid type scale (referenced by tailwind theme tokens) */
+    --text-hero: clamp(3.5rem, 14vw, 14rem);
+    --text-h1: clamp(2.5rem, 7vw, 6rem);
+    --text-h2: clamp(1.75rem, 4vw, 3rem);
+    --text-body: clamp(1rem, 1.1vw, 1.125rem);
+    --text-small: 0.8rem;
+  }
+
+  ::selection {
+    @apply bg-purple-loud text-bg;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-lime ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  /* Small uppercase tracked label — section labels, nav links, captions */
+  .label-small {
+    @apply text-small uppercase tracking-[0.08em] font-body text-ink-muted;
+  }
+
+  /* Lime underline that draws left → right on hover/focus.
+   * Works on the element itself OR as a child of a parent that carries `group`. */
+  .underline-draw,
+  .underline-draw-bold {
+    @apply relative inline-block;
+  }
+  .underline-draw {
+    @apply pb-[2px];
+  }
+  .underline-draw-bold {
+    @apply pb-[4px];
+  }
+  .underline-draw::after,
+  .underline-draw-bold::after {
+    content: "";
+    @apply absolute inset-x-0 bottom-0 bg-lime origin-left scale-x-0 transition-transform duration-300 ease-editorial;
+  }
+  .underline-draw::after {
+    @apply h-px;
+  }
+  .underline-draw-bold::after {
+    @apply h-[2px];
+  }
+  .underline-draw:hover::after,
+  .underline-draw:focus-visible::after,
+  .underline-draw-bold:hover::after,
+  .underline-draw-bold:focus-visible::after,
+  .group:hover .underline-draw::after,
+  .group:focus-visible .underline-draw::after,
+  .group:hover .underline-draw-bold::after,
+  .group:focus-visible .underline-draw-bold::after {
+    @apply scale-x-100;
+  }
+}

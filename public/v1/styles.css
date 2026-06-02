@@ -1,0 +1,108 @@
+﻿:root {
+    --i-radius: 20px;
+    --image-border-radius: var(--i-radius) var(--i-radius) var(--i-radius) 60px;
+    --image-border-radius-desktop: var(--i-radius) var(--i-radius) 50px var(--i-radius);
+    --whole-page-margin: 75px;
+    --card-max-width: 400px;
+    --header-height: 60px;
+    color: var(--neutral-color);
+}
+
+[data-theme="dark"] {
+    --primary-color: #967db0;
+    --neutral-color: #201e23;
+    --neutral-color-2: #322d36;
+    --secondary-color: #F9F5FF;
+    --accent-color: #768a2b;
+    --intro-gradient: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
+
+    .logo-full {
+        content: url("images/my-logo-full-dark.svg");
+    }
+}
+
+[data-theme="light"] {
+    --primary-color: #765995;
+    --neutral-color: rgb(249, 245, 255);
+    --neutral-color-2: #efe6ff;
+    --secondary-color: #363732;
+    --accent-color: #c9eb4a;
+    --intro-gradient: linear-gradient(68.7deg, rgb(235, 217, 221) 8%, rgb(216, 174, 211) 55.4%, rgb(145, 130, 196) 91.1%);
+}
+
+html {
+    font-family: "League Spartan", sans-serif;
+    color: var(--secondary-color);
+    font-size: 18px;
+    line-height: 25px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--neutral-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--whole-page-margin);
+}
+
+#projects-header {
+    text-align: center;
+    margin: 0;
+    color: var(--secondary-color);
+    scroll-margin-top: 120px;
+}
+
+.cta-section {
+    font-size: 1.5rem;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--intro-gradient);
+    color: var(--secondary-color);
+}
+
+.cta-section > p {
+    width: 100%;
+    min-width: 300px;
+    max-width: 800px;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.logo {
+    transition: filter 200ms ease-in-out;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 12px var(--accent-color));
+}
+
+.logo-full {
+    transition: filter 200ms ease-in-out;
+}
+
+.logo-full:hover {
+    filter: drop-shadow(0 0 6px var(--primary-color));
+}
+
+/* Fade-in Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.visible {
+    animation: fadeIn 0.5s forwards;
+}
