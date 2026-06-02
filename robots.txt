@@ -1,4 +1,0 @@
-﻿User-agent: *
-Disallow:
-
-Sitemap: https://kinangh98.github.io/sitemap.xml
