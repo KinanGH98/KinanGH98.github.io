@@ -1,24 +1,21 @@
 import type {Metadata} from "next";
 import type {ReactNode} from "react";
-import localFont from "next/font/local";
+import {League_Spartan, Hanken_Grotesk} from "next/font/google";
 import StickyNav from "@/components/layout/sticky-nav";
 import Cursor from "@/components/layout/cursor";
 import "./globals.css";
 
-// Self-hosted (Latin subset, variable weight) instead of next/font/google: Google Fonts now
-// sometimes returns extension-less `/l/font?kit=` URLs, which crash the Next 15 font loader
-// at build time ("Cannot read properties of null (reading '1')").
-const displayFont = localFont({
-    src: './fonts/league-spartan-latin.woff2',
+const displayFont = League_Spartan({
     variable: '--font-display',
-    weight: '700 900',
+    subsets: ['latin'],
+    weight: ['700', '800', '900'],
     display: 'swap',
 });
 
-const bodyFont = localFont({
-    src: './fonts/hanken-grotesk-latin.woff2',
+const bodyFont = Hanken_Grotesk({
     variable: '--font-body',
-    weight: '400 600',
+    subsets: ['latin'],
+    weight: ['400', '500', '600'],
     display: 'swap',
 });
 
